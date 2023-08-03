@@ -1,0 +1,21 @@
+apiVersion :apps/v1
+kind: testing
+metadata :
+  name : fonicy
+  labels:
+    app: fonicy
+spec:
+  replicas: 1
+  selector:
+    matchLabels :
+      app : fonicy
+  template:
+    metadata:
+      labels:
+        app: fonicy
+    spec :
+      containers:
+        - name: fonicy
+        image: jamallasomasekhar/fonicy:1
+        ports:
+        - containerPort: 8080:80
